@@ -141,3 +141,14 @@ Visit http://localhost:8000/admin and log in with your superuser credentials
    docker-compose logs --tail=100 ollama    # Last 100 lines of Ollama logs
    docker-compose logs --tail=100 django_app # Last 100 lines of Django logs
   ```
+
+## Test
+```
+pytest
+pytest -v
+
+pytest llmApp/tests/test_gemini_service.py -v
+pytest llmApp/tests/test_commands.py -v
+
+open htmlcov/index.html
+```

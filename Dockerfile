@@ -8,6 +8,8 @@ RUN apt-get update && \
     netcat-traditional \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install pytest pytest-django
+
 WORKDIR /app
 
 COPY requirements.txt .

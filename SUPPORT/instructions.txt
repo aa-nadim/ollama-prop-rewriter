@@ -25,3 +25,12 @@ docker exec -it django_app python manage.py createsuperuser
 ==========================================================
 docker exec -it django_app pytest --cov=properties --cov-report=term-missing
 docker exec -it django_app pytest --cov=properties --cov-report=html:coverage_report
+
+
+docker exec -it django_app pytest
+pytest -v
+
+pytest llmApp/tests/test_gemini_service.py -v
+pytest llmApp/tests/test_commands.py -v
+
+open htmlcov/index.html

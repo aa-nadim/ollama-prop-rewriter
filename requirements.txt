@@ -2,3 +2,9 @@ Django
 psycopg2-binary
 requests
 python-dotenv
+pytest
+pytest-Django
+pytest-cov
+pytest-mock
+responses
+factory_boy
