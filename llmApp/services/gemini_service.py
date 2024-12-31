@@ -8,7 +8,7 @@ class GeminiService:
     def __init__(self):
         self.api_key = os.getenv('GEMINI_API_KEY')
         self.base_url = "https://generativelanguage.googleapis.com/v1beta/models"
-        self.model = "gemini-1.5-flash"
+        self.model = "gemini-2.0-flash-exp"
         
     def _make_request(self, prompt: str) -> Optional[str]:
         """

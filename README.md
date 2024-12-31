@@ -49,6 +49,8 @@ docker-compose exec django_app python manage.py generate_reviews --batch-size 1
 
 chmod +x scripts/startup.sh
 ./scripts/startup.sh
+
+chmod +x scripts/run_all.sh
 ./scripts/run_all.sh
 ```
 

@@ -17,8 +17,5 @@ sleep 30
 # Check if services are running
 docker-compose ps
 
-# Pull the Gemma model
-echo "Pulling Gemma model..."
-docker-compose exec -T ollama ollama pull llama3.2:1b
 
 echo "Setup completed!"

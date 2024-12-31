@@ -6,10 +6,7 @@ docker-compose up -d
 
 # Wait for services to be ready
 echo "Waiting for services to be ready..."
-sleep 30
-
-# Pull the model
-./scripts/pull_model.sh
+sleep 5
 
 # Run the commands
 echo "Running all commands..."
