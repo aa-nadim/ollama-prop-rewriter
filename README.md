@@ -9,9 +9,19 @@ This Django application uses Ollama to generate enhanced content for hotel listi
 - PostgreSQL database with hotel data
 
 ## Environment Setup
+0. Clone trip-crawler repository
+   ```bash
+   https://github.com/aa-nadim/trip-crawler.git
+   cd trip-crawler
+
+   docker-compose up --build -d
+
+   docker-compose up --build -d scraper
+   ```
+
 1. Clone the repository
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/aa-nadim/ollama-prop-rewriter.git
     cd ollama-prop-rewriter
     ```
 
@@ -29,30 +39,6 @@ This Django application uses Ollama to generate enhanced content for hotel listi
 ## Running the Application
 
 ### Starting the Services
-
-```bash
-docker-compose up --build ollama
-docker-compose ps
-docker-compose up --build django_app
-docker-compose ps
-
-docker-compose exec ollama bash 
-ollama list 
-ollama rm gemma2:2b                                            
-docker-compose exec ollama ollama pull llama3.2:1b 
-
-docker-compose exec django_app python manage.py rewrite_titles --batch-size 1
-docker-compose exec django_app python manage.py generate_descriptions --batch-size 1
-docker-compose exec django_app python manage.py generate_summaries --batch-size 1
-docker-compose exec django_app python manage.py generate_reviews --batch-size 1
-
-
-chmod +x scripts/startup.sh
-./scripts/startup.sh
-
-chmod +x scripts/run_all.sh
-./scripts/run_all.sh
-```
 
 1. Build and start the containers:
     ```
@@ -88,6 +74,10 @@ Each command below processes hotels in batches. You can adjust the batch size us
 ### Running All Commands at Once
 
 ```
+chmod +x scripts/startup.sh
+./scripts/startup.sh
+
+chmod +x scripts/run_all.sh
 ./scripts/run_all.sh
 ```
 
@@ -143,12 +133,8 @@ Visit http://localhost:8000/admin and log in with your superuser credentials
   ```
 
 ## Test
-```
-pytest
-pytest -v
+```bash
+docker-compose exec django_app coverage run --source='llmApp' manage.py test llmApp
 
-pytest llmApp/tests/test_gemini_service.py -v
-pytest llmApp/tests/test_commands.py -v
-
-open htmlcov/index.html
+docker-compose exec django_app coverage report    # to see coverage
 ```
