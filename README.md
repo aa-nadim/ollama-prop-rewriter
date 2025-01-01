@@ -105,33 +105,6 @@ Access the Django admin interface:
 
 Visit http://localhost:8000/admin and log in with your superuser credentials
 
-## Troubleshooting
-
-### Common Issues
-
-1. Ollama Service Not Starting
-- Ensure ports are not in use
-- Check system resources
-- Review Ollama logs
-
-2. Database Connection Issues
-- Verify PostgreSQL is running
-- Check database credentials in .env
-- Ensure database exists and is accessible
-
-3. Timeout Errors
-- Increase timeout value in OllamaService class
-- Reduce batch size
-- Check system resources
-
-### Error Logs
-
-1. Check the logs if you encounter issues:
-   ```bash
-   docker-compose logs --tail=100 ollama    # Last 100 lines of Ollama logs
-   docker-compose logs --tail=100 django_app # Last 100 lines of Django logs
-  ```
-
 ## Test
 ```bash
 docker-compose exec django_app coverage run --source='llmApp' manage.py test llmApp
