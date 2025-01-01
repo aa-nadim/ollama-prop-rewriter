@@ -28,9 +28,29 @@ docker exec -it django_app pytest --cov=properties --cov-report=html:coverage_re
 
 
 docker exec -it django_app pytest
+
+docker exec -it django_app pytest llmApp/tests/test_gemini_service.py
+
+docker exec -it django_app pytest llmApp/tests/test_commands.py
+
 pytest -v
 
 pytest llmApp/tests/test_gemini_service.py -v
 pytest llmApp/tests/test_commands.py -v
 
 open htmlcov/index.html
+
+====================================
+
+docker-compose exec django_app bash
+
+docker exec -it django_app python manage.py test llmApp
+
+python manage.py test llmApp
+
+====================================
+docker-compose exec django_app coverage run --source='llmApp' manage.py test llmApp
+
+
+docker-compose exec django_app coverage report
+docker-compose exec django_app coverage report
