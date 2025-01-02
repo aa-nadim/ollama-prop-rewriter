@@ -32,7 +32,7 @@ This Django application uses Ollama to generate enhanced content for hotel listi
     ```
     docker-compose up -d --build
     ```
-   Wait for the services to be ready (about 30 seconds)
+   Wait for the services to be ready 
 
 2. Verify the services are running:
    ```
@@ -68,19 +68,6 @@ chmod +x scripts/startup.sh
 chmod +x scripts/run_all.sh
 ./scripts/run_all.sh
 ```
-
-## Monitoring and Maintenance
-
-### View Logs
-
-1. View Ollama service logs:
-   ```
-   docker-compose logs ollama
-   ```
-2. View Django app logs:
-   ```
-   docker-compose logs django_app
-   ```
 
 ## Database Management
 
