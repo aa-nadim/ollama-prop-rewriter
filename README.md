@@ -11,7 +11,7 @@ This Django application uses Ollama/Gemini  to generate enhanced content for hot
 ## Environment Setup
 0. Clone trip-crawler repository
    ```bash
-   https://github.com/aa-nadim/trip-crawler.git
+   git clone https://github.com/aa-nadim/trip-crawler.git
    cd trip-crawler
 
    docker-compose up --build -d
