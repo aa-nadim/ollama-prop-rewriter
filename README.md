@@ -1,6 +1,6 @@
-# Hotel Content Generator with Ollama
+# Hotel Content Generator with Ollama/Gemini
 
-This Django application uses Ollama to generate enhanced content for hotel listings, including descriptions, reviews, and summaries.
+This Django application uses Ollama/Gemini  to generate enhanced content for hotel listings, including descriptions, reviews, and summaries.
 
 ## Prerequisites
 - Docker and Docker Compose
